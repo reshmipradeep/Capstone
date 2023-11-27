@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Music Recommender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <img src="static\logo.png">
+    <br>
+    <form action="username" method="post">
+        {% for message in get_flashed_messages() %}
+            <p>{{ message }}</p>
+        {% endfor %}
+        <input type="radio" id="twitter" name="user_type" value="twitter">
+        <label for="twitter">Twitter</label>
+        <input type="radio" id="threads" name="user_type" value="threads">
+        <label for="threads">Threads</label>
+        <br>
+        <input type="submit" value="Submit" id="button">
+    </form>
+</body>
+</html>

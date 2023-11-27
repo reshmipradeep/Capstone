@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Music Recommender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/username.css') }}">
+</head>
+<body>
+    <img src="static\logo.png">
+    <br>
+    <form action="recommend" method="post">
+        {% for message in get_flashed_messages() %}
+            <p>{{ message }}</p>
+        {% endfor %}
+        <input type="hidden" name="user_type" value="{{ user_type }}">
+        <br>
+        <label for="username_input">Please enter your username:</label>
+        <input type="text" name="username_input">
+        <br>
+        <div id="loading-indicator" style="display: none;">
+            <p>Loading, please wait...</p>
+        </div>
+        <input type="submit" value="Submit" id="button">
+    </form>    
+    <script>
+        document.querySelector('form').addEventListener('submit', function() {
+            // Show the loading indicator
+            document.getElementById('loading-indicator').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

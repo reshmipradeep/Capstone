@@ -1,0 +1,63 @@
+body {
+    background-image: url('https://c4.wallpaperflare.com/wallpaper/1015/288/873/record-players-vinyl-music-wallpaper-preview.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+    background-color: SlateGrey;
+  }
+p {
+    color: white;
+    font-family: Shanti;
+    font-size: 1.2em;
+    display: inline-block;
+    margin:  20px;
+}
+img {
+    margin: 60px 0 30px 0;
+    width: 250px;
+}
+input {
+  width: 300px;
+  margin: 20px 20px;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  font-family: Shanti;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+input:focus {
+    outline: none;
+    border: solid 5px #c3be96;
+}
+
+#button {
+    background-color: rgb(137, 104, 37);
+    border:  none;
+    width:  200px;
+    color: white;
+}
+
+#button:hover {
+    background-color: rgb(43, 14, 46);
+}
+
+/* Centering Container */
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* This ensures the container takes the full viewport height */
+}
+
+/* Text Box Styles */
+.text-box {
+    width: 300px; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+

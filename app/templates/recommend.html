@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Recommender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/recommend.css') }}">
+    <title>Recommendation Results</title>
+</head>
+<body>
+    <img src="static\logo.png">
+    <h1>Here are your recommended songs!</h1>
+    
+    <form action="/submit_ratings" method="post">
+        <table border="1">
+            <tr>
+                {% for header in data[0] %}
+                    <th>{{ header }}</th>
+                {% endfor %}
+                <th>Rate (out of five)</th> <!-- Add a new column for ratings -->
+            </tr>
+            
+            {% for row in data[1:] %}
+                <tr>
+                    {% for col in row %}
+                        <td>{{ col }}</td>
+                    {% endfor %}
+                    <td>
+                        <input type="number" name="ratings[]" min="1" max="5" step="0.1" required>
+                        <!-- You can use a number input for ratings with a min and max value -->
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        
+        <input type="submit" value="Submit Ratings" id="button">
+    </form>
+</body>
+</html>
